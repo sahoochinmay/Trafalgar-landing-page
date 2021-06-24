@@ -1,13 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500&display=swap");
 body {
+  font-family: "Mulish", sans-serif;
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  /* transition: all 0.5s; */
+}
+html {
+  font-size: 62.5%;
+}
+.app {
+  width: 97%;
+  max-width: 1680px;
+  margin: auto;
+  /* border: 3px solid red; */
+}
+:root {
+  --textColor: black;
+  --primaryColor: #458ff6;
+  --secondaryColor: white;
+  --backgroundColor: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ////////////////////////////////////////////////// */
+/* ///////////////////////// app /////////////////// */
+/* //////////////////////////////////////////////// */
+nav {
+  height: 13rem;
+  width: 100%;
+  position: relative;
+}
+nav *{
+  transition: all 0.5s;
+}
+nav #logo {
+  position: absolute;
+  top: 4rem;
+  left: 8%;
+  cursor: pointer;
+}
+nav ul {
+  float: right;
+  margin-right: 3rem;
+  line-height: 13rem;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 1.5rem;
+  text-align: center;
+}
+nav ul li a {
+  color: var(--textColor);
+  font-size: 1.7rem;
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 0%;
+  height: 0.2rem;
+  background: var(--primaryColor);
+  transition: 0.2s linear;
+}
+nav ul li a:hover::before {
+  width: 100%;
+}
+label #btn,
+label #cancel {
+  color: var(--textColor);
+  font-size: 3rem;
+  float: right;
+  line-height: 13rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+#check {
+  display: none;
+}
+@media (max-width: 1100px) {
+  nav #logo {
+    left: 5%;
+  }
+}
+@media (max-width: 910px) {
+  nav ul {
+    margin-right: 1rem;
+  }
+  nav ul li {
+    margin: 0 1.25rem;
+  }
+}
+@media (max-width: 740px) {
+  label #btn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 10rem;
+    left: -100%;
+    background-color: var(--backgroundColor);
+    text-align: center;
+    transition: all 0.5s;
+    border-top: 3px solid var(--primaryColor);
+  }
+  nav ul li {
+    display: block;
+    line-height: 100%;
+    margin-top: 3rem;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  #check:checked ~ label #btn {
+    display: none;
+  }
+  #check:checked ~ label #cancel {
+    display: block;
+  }
+}
+@media (max-width: 310px) {
+  nav #logo{
+    width: 10rem;
+  }
+}
+/* ////////////////////////////////////////////////// */
+/* ///////////////////////// home /////////////////// */
+/* //////////////////////////////////////////////// */
+.home {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "left right";
+}
+.home *{
+  transition: all 0.5s;
+}
+.leftHome {
+  grid-area: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.leftHome div h2 {
+  font-size: 4.8rem;
+}
+
+.leftHome div p {
+  font-size: 2.1rem;
+  margin: 2rem 0;
+  font-weight: 200;
+}
+
+.leftHome div a {
+  display: inline-block;
+  padding: 1.5rem 2.5rem;
+  border-radius: 55px;
+  background: var(--primaryColor);
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: var(--secondaryColor);
+  font-weight: 400;
+}
+.rightRight {
+  grid-area: right;
+  padding: 3rem;
+}
+.rightRight img {
+  width: 90%;
+}
+@media (max-width: 1210px) {
+  .leftHome div h2 {
+    font-size: 3.8rem;
+  }
+  .leftHome div p {
+    font-size: 1.8rem;
+  }
+  .leftHome div a {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 910px) {
+  .leftHome div h2 {
+    font-size: 3rem;
+  }
+  .leftHome div p {
+    font-size: 1.5rem;
+  }
+  .leftHome div a {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 740px) {
+  .home {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "right"
+      "left";
+  }
+  .rightRight img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}
+@media (max-width: 410px) {
+  .rightRight img {
+    width: 80%;
+  }
+}
+@media (max-width: 330px) {
+  .rightRight img {
+    width: 80%;
+  }
+  .leftHome div h2 {
+    font-size: 2rem;
+  }
+  .leftHome div p {
+    font-size: 1rem;
+  }
+  .leftHome div a {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+}
+/* ////////////////////////////////////////////////// */
+/* ///////////////////////// service /////////////////// */
+/* //////////////////////////////////////////////// */
+.service{
+  padding-top: 13rem;
+}
+.service *{
+  transition: all 0.5s;
+}
+.service .title{
+  font-size: 3.6rem;
+  text-align: center;
+}
+.service hr{
+  margin: 3.7rem auto;
+  width: 7rem;
+  height: 0.4rem;
+  background: var(--textColor);
+  
+}
+.service .description{
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+.service .serviceContainer{
+   display: flex;
+}
+.service .serviceContainer .serviceCard{
+  width: 35rem;
+  border: 1px solid gray;
 }

@@ -264,8 +264,24 @@ label #cancel {
 }
 .service .serviceContainer{
    display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 90%;
+   margin: auto;
+   margin-top: 3rem;
 }
 .service .serviceContainer .serviceCard{
   width: 35rem;
   border: 1px solid gray;
+  flex-basis: 30%;
+  margin: 2rem 0.2rem 1rem 0.2rem;
+  padding: 2rem 2.6rem;
+  box-shadow: 0 0 4px rgba(255,255,255,0.79);
+}
+
+.service .serviceContainer .serviceCard img{
+  width: 9rem;
+  height: 9rem;
+  margin:2rem 0;
 }

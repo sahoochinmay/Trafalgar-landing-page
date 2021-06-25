@@ -23,7 +23,32 @@ html {
   --secondaryColor: white;
   --backgroundColor: white;
 }
-
+.button {
+  padding: 1.2rem 3rem;
+  border-radius: 55px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--primaryColor);
+  font-weight: 500;
+  border: 2px solid var(--primaryColor);
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+}
+@media (max-width: 1400px) {
+  .button {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1150px) {
+  .button {
+    padding: 1rem 2.6rem;
+    font-size: 1rem;
+  }
+}
 /* ////////////////////////////////////////////////// */
 /* ///////////////////////// app /////////////////// */
 /* //////////////////////////////////////////////// */
@@ -102,7 +127,7 @@ label #cancel {
   label #btn {
     display: block;
   }
-  ul {
+  nav ul {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -173,6 +198,14 @@ label #cancel {
   color: var(--secondaryColor);
   font-weight: 400;
 }
+.leftHome div a:hover {
+  background: var(--secondaryColor);
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: var(--primaryColor);
+  font-weight: 400;
+  border: 2px solid var(--primaryColor);
+}
 .rightRight {
   grid-area: right;
   padding: 3rem;
@@ -214,7 +247,7 @@ label #cancel {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 60%;
   }
 }
 @media (max-width: 410px) {
@@ -242,10 +275,21 @@ label #cancel {
 /* //////////////////////////////////////////////// */
 .service {
   padding-top: 13rem;
+  padding-bottom: 3rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 .service * {
   transition: all 0.5s;
+}
+.service #serviceBg {
+  position: absolute;
+  left: -100px;
+  top: 100px;
+  opacity: 0.6;
+  transform: rotate(-1.46deg);
+  z-index: -1;
 }
 .service .title {
   font-size: 3.6rem;
@@ -259,8 +303,11 @@ label #cancel {
 .service .description {
   font-size: 1.6rem;
   font-weight: 200;
+  width: 60%;
+  margin: auto;
 }
 .service .serviceContainer {
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -270,6 +317,7 @@ label #cancel {
   margin-top: 3rem;
   margin-bottom: 5rem;
   text-align: left;
+  z-index: 1;
 }
 .service .serviceContainer .serviceCard {
   flex-basis: 30%;
@@ -320,35 +368,96 @@ label #cancel {
   border: 2px solid var(--primaryColor);
 }
 @media (max-width: 900px) {
-  .service .serviceContainer .serviceCard{
+  .service .title {
+    font-size: 3rem;
+  }
+  .service hr {
+    margin: 2.7rem auto;
+  }
+  .service .description {
+    width: 80%;
+    font-size: 1.4rem;
+  }
+  .service .serviceContainer .serviceCard {
     flex-basis: 45%;
   }
 }
+@media (max-width: 745px) {
+  .service {
+    padding-top: 8rem;
+  }
+  .service .serviceContainer .serviceCard h3 {
+    font-size: 2.1rem;
+  }
+}
 @media (max-width: 620px) {
-  .service .serviceContainer .serviceCard{
+  .service .serviceContainer .serviceCard {
     flex-basis: 90%;
     max-width: 35rem;
   }
-  .service .serviceContainer .serviceCard h3{
+  .service .serviceContainer .serviceCard h3 {
     font-size: 2rem;
+  }
+  .service .serviceContainer .serviceCard p {
+    font-size: 1.3rem;
+  }
+  .service .serviceContainer .serviceCard img {
+    width: 6rem;
+    height: 6rem;
+    margin: 1rem 0;
+  }
+  .service a {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 330px) {
+  .service .title {
+    font-size: 2.4rem;
+  }
+  .service hr {
+    margin: 2rem auto;
+  }
+  .service .description {
+    width: 80%;
+    font-size: 1rem;
+  }
+  .service .serviceContainer .serviceCard h3 {
+    font-size: 1.6rem;
+  }
+  .service .serviceContainer .serviceCard p {
+    font-size: 1rem;
+  }
+  .service .serviceContainer .serviceCard img {
+    width: 4rem;
+    height: 4rem;
+    margin: 0.8rem 0;
   }
 }
 /* ////////////////////////////////////////////////// */
 /* ///////////////////////// about /////////////////// */
 /* //////////////////////////////////////////////// */
 .about {
-  margin-top: 10rem;
+  margin-top: 13rem;
+  margin-bottom: 20rem;
+  position: relative;
 }
 .about * {
   transition: all 0.5s;
 }
+.about #aboutDot {
+  position: absolute;
+  right: 0;
+  top: 45%;
+}
 .about section {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: auto;
+  margin-bottom: 20rem;
 }
 .about section div {
   flex-basis: 50%;
@@ -365,20 +474,436 @@ label #cancel {
   letter-spacing: 0em;
   text-align: left;
 }
-
-.about section div p{
-font-size: 18px;
-font-style: normal;
-font-weight: 300;
-line-height: 30px;
-letter-spacing: 0em;
-text-align: left;
-
+.about section div p {
+  font-size: 1.8rem;
+  font-weight: 200;
+  line-height: 3.1rem;
+  letter-spacing: 0.5px;
+  text-align: left;
+  width: 70%;
+  margin-bottom: 3rem;
 }
 
-.about hr{
-  width:3rem;
+.about hr {
+  width: 5.6rem;
   height: 0.4rem;
-  background:var(--primaryColor);
-  margin-top:1rem;
+  background: var(--textColor);
+  margin: 3rem 0;
+}
+@media (max-width: 1400px) {
+  .about section div h1 {
+    font-size: 3rem;
+  }
+  .about hr {
+    margin: 2.3rem 0;
+  }
+  .about section div p {
+    letter-spacing: 0.2px;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 1150px) {
+  .about section div h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .about hr {
+    margin: 2rem 0;
+  }
+  .about section div p {
+    letter-spacing: 0px;
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+  }
+}
+@media (max-width: 740px) {
+  .about section{
+    margin-bottom: 5rem;
+  }
+  .about section div {
+    flex-basis: 90%;
+    margin: auto;
+    margin-bottom: 3rem;
+  }
+  .about section div img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+  .about section div h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .about hr {
+    margin: 2rem 0;
+  }
+  .about section div p {
+    letter-spacing: 0px;
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+  }
+  .secondRow .secondImg {
+    order: 1;
+  }
+  .secondRow .text {
+    order: 2;
+  }
+}
+@media (max-width: 550px) {
+}
+/* ////////////////////////////////////////////////// */
+/* ///////////////////////// testimonial /////////////////// */
+/* //////////////////////////////////////////////// */
+.testimonial {
+  width: 75%;
+  margin: auto;
+  background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+  text-align: center;
+  padding-top: 5rem;
+  color: var(--backgroundColor);
+  border-radius: 24px;
+  position: relative;
+}
+.testimonial * {
+  transition: all 0.5s;
+}
+.testimonial #testDot1 {
+  position: absolute;
+  right: -40px;
+  top: 10px;
+}
+.testimonial #testDot2 {
+  position: absolute;
+  left: -50px;
+  bottom: 10px;
+  z-index: -1;
+}
+.testimonial h1 {
+  font-size: 3rem;
+}
+.testimonial hr {
+  width: 5.6rem;
+  height: 0.4rem;
+  background: var(--backgroundColor);
+  margin: 3rem auto;
+}
+.testimonial .customer {
+  width: 85%;
+  margin: auto;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.testimonial .customer div {
+  flex-basis: 50%;
+  text-align: left;
+}
+.testimonial .customer .left {
+  display: flex;
+  justify-content: space-evenly;
+}
+.testimonial .customer .left .imgCircle {
+  border-radius: 50%;
+  height: 15rem;
+  width: 15rem;
+  border: 2px solid white;
+}
+.testimonial .customer .left .details h3 {
+  margin-top: 5rem;
+  font-size: 1.9rem;
+}
+.testimonial .customer .comment p {
+  font-size: 1.8rem;
+  line-height: 30px;
+}
+.testimonialFooter {
+  margin: 5rem auto;
+  text-align: center;
+  font-size: 2rem;
+}
+.testimonialFooter #prev,
+#next {
+  color: #458ff6;
+  cursor: pointer;
+}
+.testimonialFooter #tc1,#tc2,#tc3{
+  font-size: 1.7rem;
+  color: #5B9BF3;
+}
+@media (max-width: 1200px) {
+  .testimonial .customer .left .imgCircle {
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    border: 2px solid white;
+  }
+  .testimonial .customer .left .details h3 {
+    margin-top: 2.8rem;
+    font-size: 1.3rem;
+  }
+  .testimonial .customer .comment p {
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    line-height: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .testimonial h1 {
+    font-size: 2.4rem;
+  }
+  .testimonial .customer .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .testimonial h1 {
+    font-size: 1.8rem;
+  }
+  .testimonial hr {
+    margin: 2rem auto;
+  }
+  .testimonial .customer {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .testimonial .customer .comment p {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 450px) {
+  .testimonial h1 {
+    font-size: 1.3rem;
+  }
+  .testimonial hr {
+    margin: 2rem auto 0;
+  }
+}
+@media (max-width: 400px) {
+  .testimonial {
+    width: 85%;
+  }
+  .testimonial h1 {
+    font-size: 1.6rem;
+  }
+}
+/* ////////////////////////////////////////////////// */
+/* ///////////////////////// article /////////////////// */
+/* //////////////////////////////////////////////// */
+.articleHeading {
+  margin-top: 20rem;
+  margin-bottom: 5rem;
+  font-size: 3.6rem;
+  text-align: center;
+}
+.drow {
+  margin: 3.7rem auto;
+  width: 7rem;
+  height: 0.4rem;
+  background: var(--textColor);
+}
+.article {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.article * {
+  transition: all 0.5s;
+}
+.article #articleDot {
+  position: absolute;
+  left: -30px;
+  top: -30px;
+  z-index: -1;
+}
+.article #articleBg {
+  position: absolute;
+  right: -200px;
+  top: 0px;
+  z-index: -1;
+  width: 778.73px;
+  height: 557.4px;
+  opacity: 0.6;
+  transform: rotate(-159.84deg);
+}
+.article .articleBox div {
+  padding: 2.2rem 3.2rem;
+}
+
+.article .articleBox {
+  box-shadow: 10px 40px 50px 0px #e5e9f666;
+  flex-basis: 28%;
+  border-radius: 10px;
+  margin: 2rem 0;
+  background-color: white;
+}
+
+.article .articleBox .imgWrapper {
+  padding: 0;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+
+.article .articleBox img {
+  width: 100%;
+  transition: 0.3s linear;
+}
+
+.article .articleBox img:hover {
+  transform: scale(1.15) rotateZ(1deg);
+  opacity: 0.7;
+}
+
+.article .articleBox div h3 {
+  font-size: 2.1rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.article .articleBox div p {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 2rem 0;
+}
+
+.article .articleBox div a {
+  text-decoration: none;
+  color: var(--primaryColor);
+  position: relative;
+
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+}
+
+.article .articleBox div a::after {
+  content: "\2192";
+  position: absolute;
+  left: 115%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.articleButton {
+  text-align: center;
+}
+@media (max-width: 1100px) {
+  .article .articleBox div h3 {
+    font-size: 1.8rem;
+  }
+  .article .articleBox div p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .articleHeading {
+    margin-top: 16rem;
+    margin-bottom: 4rem;
+    font-size: 3rem;
+  }
+  .article .articleBox div h3 {
+    font-size: 1.5rem;
+  }
+  .article .articleBox div p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .article .articleBox {
+    flex-basis: 98%;
+  }
+  .article .articleBox div h3 {
+    font-size: 1.6rem;
+  }
+  .article .articleBox div p {
+    font-size: 1.2rem;
+  }
+}
+/* ////////////////////////////////////////////////// */
+/* ///////////////////////// footer /////////////////// */
+/* //////////////////////////////////////////////// */
+
+.footer {
+  margin: auto;
+  padding: 6rem;
+  margin-top: 20rem;
+  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  width: 100%;
+  color: var(--secondaryColor);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 1600px;
+  position: relative;
+}
+.footer #footerDot {
+  position: absolute;
+  top: -50px;
+  right: 50px;
+  z-index: -1;
+}
+.footer #footerDot1 {
+  position: absolute;
+  left: -50px;
+  bottom: 0px;
+}
+.footer #leftFooter p {
+  margin: 3rem 0;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+.footer .footerText ul {
+  list-style-type: none;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 38px;
+}
+@media (max-width: 1300px) {
+  .footer #leftFooter p {
+    font-size: 1.3rem;
+  }
+  .footer .footerText ul {
+    font-size: 13px;
+  }
+}
+@media (max-width: 950px) {
+  .footer {
+    padding: 6rem 2rem;
+  }
+}
+@media (max-width: 950px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer .footerText ul {
+    margin-top: 5rem;
+  }
 }

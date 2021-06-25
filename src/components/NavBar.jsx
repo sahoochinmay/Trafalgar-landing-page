@@ -13,19 +13,19 @@ const NavBar = () => {
         <img src={logo} alt="Trafalgar" id="logo" />
         <ul class="navbar-collapse">
           <li>
-            <a href="#">Home</a>
+            <a href="#H">Home</a>
           </li>
           <li>
-            <a href="#">Find a doctor</a>
+            <a href="#F">Find a doctor</a>
           </li>
           <li>
-            <a href="#">App</a>
+            <a href="#A">App</a>
           </li>
           <li>
-            <a href="#">Testimonials</a>
+            <a href="#T">Testimonials</a>
           </li>
           <li>
-            <a href="#">About us</a>
+            <a href="#U">About us</a>
           </li>
         </ul>
       </nav>

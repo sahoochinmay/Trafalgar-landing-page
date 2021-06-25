@@ -3,7 +3,7 @@ import home1 from "../assets/home1.svg";
 
 const Home = () => {
   return (
-    <section className="home">
+    <section className="home" id="H">
       <div className="leftHome">
         <div>
           <h2>

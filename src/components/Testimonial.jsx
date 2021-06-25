@@ -5,7 +5,7 @@ import dot2 from '../assets/testimonialDot2.svg'
 
 const Testimonial = () => {
   return (
-    <>
+    <section>
       <section className="testimonial" id="T">
         <img src={dot1} alt="testDot1"  id="testDot1" />
         <img src={dot2} alt="testDot2" id="testDot2" />
@@ -36,7 +36,7 @@ const Testimonial = () => {
         <i class="fa fa-circle-thin" aria-hidden="true" id="tc3"></i>&nbsp;&nbsp;&nbsp;
         <i class="fa fa-long-arrow-right" aria-hidden="true" id="next"></i>
       </section>
-    </>
+    </section>
   );
 };
 

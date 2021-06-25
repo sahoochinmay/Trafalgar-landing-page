@@ -278,7 +278,7 @@ label #cancel {
   padding-bottom: 3rem;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .service * {
   transition: all 0.5s;
@@ -564,6 +564,7 @@ label #cancel {
   color: var(--backgroundColor);
   border-radius: 24px;
   position: relative;
+  overflow-x: hidden;
 }
 .testimonial * {
   transition: all 0.5s;

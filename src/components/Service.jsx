@@ -23,6 +23,7 @@ const Service = () => {
           );
         })}
       </section>
+      <a href="#">Learn more</a>
     </section>
   );
 };

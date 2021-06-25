@@ -275,9 +275,10 @@ label #cancel {
   width: 35rem;
   border: 1px solid gray;
   flex-basis: 30%;
-  margin: 2rem 0.2rem 1rem 0.2rem;
+  margin: 2rem 0.6rem 1rem 0.6rem;
   padding: 2rem 2.6rem;
-  box-shadow: 0 0 4px rgba(255,255,255,0.79);
+  border-radius: 10px;
+  
 }
 
 .service .serviceContainer .serviceCard img{

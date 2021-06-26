@@ -1,5 +1,4 @@
 import React,{useState , useEffect} from "react";
-import t1 from "../assets/t1.png";
 import dot1 from '../assets/testimonialDot1.svg'
 import dot2 from '../assets/testimonialDot2.svg'
 import {testimonialData} from '../data/testimonial'
@@ -23,7 +22,7 @@ const Testimonial = () => {
     }else{
       setTIndex(0)
     }
-  }, 2000);
+  }, 3000);
   return (
     <section className="testimonialMain" >
       <section className="testimonial" id="T">
@@ -33,7 +32,7 @@ const Testimonial = () => {
         <hr />
         <section className="customer">
           <div className="left">
-            <img src={t1} alt="" className="imgCircle" />
+            <img src={testimonialData[Tindex]?.image} alt="" className="imgCircle" />
             <div className="details">
               <h3>{testimonialData[Tindex]?.name}</h3>
               <p>{testimonialData[Tindex]?.position}</p>
@@ -48,11 +47,12 @@ const Testimonial = () => {
       </section>
 
       <section className="testimonialFooter">
-        <i class="fa fa-long-arrow-left" aria-hidden="true" id="prev" onClick={handlePrev}></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-circle-thin" aria-hidden="true"  id="tc1"  ></i>&nbsp;
-        <i class="fa fa-circle" aria-hidden="true" id="tc2"></i>&nbsp;
-        <i class="fa fa-circle-thin" aria-hidden="true" id="tc3"></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-long-arrow-right" aria-hidden="true" id="next" onClick={handleNext} ></i>
+        <i className="fa fa-long-arrow-left" aria-hidden="true" id="prev" onClick={handlePrev}></i>&nbsp;&nbsp;&nbsp;
+        {
+          [...Array(testimonialData?.length)].map((e, i) => <><i className={`fa ${i === Tindex ? `fa-circle` : `fa-circle-thin`}`} aria-hidden="true"  id="tc1"  />&nbsp;</> )
+        }
+        &nbsp;&nbsp;&nbsp;
+        <i className="fa fa-long-arrow-right" aria-hidden="true" id="next" onClick={handleNext} ></i>
       </section>
     </section>
   );

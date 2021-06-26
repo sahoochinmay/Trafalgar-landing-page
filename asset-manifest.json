@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/Trafalgar-landing-page/static/css/main.d57c7a78.chunk.css",
-    "main.js": "/Trafalgar-landing-page/static/js/main.710f49b3.chunk.js",
-    "main.js.map": "/Trafalgar-landing-page/static/js/main.710f49b3.chunk.js.map",
-    "runtime-main.js": "/Trafalgar-landing-page/static/js/runtime-main.35b915fd.js",
-    "runtime-main.js.map": "/Trafalgar-landing-page/static/js/runtime-main.35b915fd.js.map",
-    "static/js/2.4e4a2c12.chunk.js": "/Trafalgar-landing-page/static/js/2.4e4a2c12.chunk.js",
-    "static/js/2.4e4a2c12.chunk.js.map": "/Trafalgar-landing-page/static/js/2.4e4a2c12.chunk.js.map",
-    "static/js/3.88a42fb0.chunk.js": "/Trafalgar-landing-page/static/js/3.88a42fb0.chunk.js",
-    "static/js/3.88a42fb0.chunk.js.map": "/Trafalgar-landing-page/static/js/3.88a42fb0.chunk.js.map",
+    "main.js": "/Trafalgar-landing-page/static/js/main.89c6b7a8.chunk.js",
+    "main.js.map": "/Trafalgar-landing-page/static/js/main.89c6b7a8.chunk.js.map",
+    "runtime-main.js": "/Trafalgar-landing-page/static/js/runtime-main.f64fa4bd.js",
+    "runtime-main.js.map": "/Trafalgar-landing-page/static/js/runtime-main.f64fa4bd.js.map",
+    "static/js/2.cfdd0a82.chunk.js": "/Trafalgar-landing-page/static/js/2.cfdd0a82.chunk.js",
+    "static/js/2.cfdd0a82.chunk.js.map": "/Trafalgar-landing-page/static/js/2.cfdd0a82.chunk.js.map",
+    "static/js/3.d533ffb8.chunk.js": "/Trafalgar-landing-page/static/js/3.d533ffb8.chunk.js",
+    "static/js/3.d533ffb8.chunk.js.map": "/Trafalgar-landing-page/static/js/3.d533ffb8.chunk.js.map",
     "index.html": "/Trafalgar-landing-page/index.html",
     "service-worker.js": "/Trafalgar-landing-page/service-worker.js",
     "service-worker.js.map": "/Trafalgar-landing-page/service-worker.js.map",
     "static/css/main.d57c7a78.chunk.css.map": "/Trafalgar-landing-page/static/css/main.d57c7a78.chunk.css.map",
-    "static/js/2.4e4a2c12.chunk.js.LICENSE.txt": "/Trafalgar-landing-page/static/js/2.4e4a2c12.chunk.js.LICENSE.txt",
+    "static/js/2.cfdd0a82.chunk.js.LICENSE.txt": "/Trafalgar-landing-page/static/js/2.cfdd0a82.chunk.js.LICENSE.txt",
     "static/media/about1.e7805189.svg": "/Trafalgar-landing-page/static/media/about1.e7805189.svg",
     "static/media/about2.867d93f2.svg": "/Trafalgar-landing-page/static/media/about2.867d93f2.svg",
     "static/media/article1.2e2c4372.svg": "/Trafalgar-landing-page/static/media/article1.2e2c4372.svg",
@@ -30,14 +30,16 @@
     "static/media/search.dce6b49a.svg": "/Trafalgar-landing-page/static/media/search.dce6b49a.svg",
     "static/media/serviceBG.e4db4ad6.svg": "/Trafalgar-landing-page/static/media/serviceBG.e4db4ad6.svg",
     "static/media/t1.710e353d.png": "/Trafalgar-landing-page/static/media/t1.710e353d.png",
+    "static/media/t2.80da7188.png": "/Trafalgar-landing-page/static/media/t2.80da7188.png",
+    "static/media/t3.622af26c.png": "/Trafalgar-landing-page/static/media/t3.622af26c.png",
     "static/media/testimonialDot1.d3c226ad.svg": "/Trafalgar-landing-page/static/media/testimonialDot1.d3c226ad.svg",
     "static/media/testimonialDot2.0af44180.svg": "/Trafalgar-landing-page/static/media/testimonialDot2.0af44180.svg",
     "static/media/tracking.6345523b.svg": "/Trafalgar-landing-page/static/media/tracking.6345523b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.35b915fd.js",
-    "static/js/2.4e4a2c12.chunk.js",
+    "static/js/runtime-main.f64fa4bd.js",
+    "static/js/2.cfdd0a82.chunk.js",
     "static/css/main.d57c7a78.chunk.css",
-    "static/js/main.710f49b3.chunk.js"
+    "static/js/main.89c6b7a8.chunk.js"
   ]
 }

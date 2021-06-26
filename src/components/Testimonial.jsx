@@ -1,11 +1,31 @@
-import React from "react";
+import React,{useState , useEffect} from "react";
 import t1 from "../assets/t1.png";
 import dot1 from '../assets/testimonialDot1.svg'
 import dot2 from '../assets/testimonialDot2.svg'
+import {testimonialData} from '../data/testimonial'
+
 
 const Testimonial = () => {
+  const [Tindex,setTIndex] = useState(0)
+  const handlePrev = () =>{
+    if (Tindex > 0) {
+      setTIndex(Tindex-1);
+    }
+  }
+  const handleNext = () =>{
+    if (Tindex < testimonialData.length-1 ) {
+      setTIndex(Tindex+1);
+    }
+  }
+  setTimeout(() => {
+    if (Tindex < testimonialData.length-1 ) {
+      setTIndex(Tindex+1);
+    }else{
+      setTIndex(0)
+    }
+  }, 2000);
   return (
-    <section>
+    <section className="testimonialMain" >
       <section className="testimonial" id="T">
         <img src={dot1} alt="testDot1"  id="testDot1" />
         <img src={dot2} alt="testDot2" id="testDot2" />
@@ -15,26 +35,24 @@ const Testimonial = () => {
           <div className="left">
             <img src={t1} alt="" className="imgCircle" />
             <div className="details">
-              <h3>Edward Newgate</h3>
-              <p>Founder Circle</p>
+              <h3>{testimonialData[Tindex]?.name}</h3>
+              <p>{testimonialData[Tindex]?.position}</p>
             </div>
           </div>
           <div className="comment">
             <p>
-              “Our dedicated patient engagement app and web portal allow you to
-              access information instantaneously (no tedeous form, long calls,
-              or administrative hassle) and securely”
+              “{testimonialData[Tindex]?.comment}”
             </p>
           </div>
         </section>
       </section>
 
       <section className="testimonialFooter">
-        <i class="fa fa-long-arrow-left" aria-hidden="true" id="prev"></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-circle-thin" aria-hidden="true"  id="tc1" ></i>&nbsp;
+        <i class="fa fa-long-arrow-left" aria-hidden="true" id="prev" onClick={handlePrev}></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa fa-circle-thin" aria-hidden="true"  id="tc1"  ></i>&nbsp;
         <i class="fa fa-circle" aria-hidden="true" id="tc2"></i>&nbsp;
         <i class="fa fa-circle-thin" aria-hidden="true" id="tc3"></i>&nbsp;&nbsp;&nbsp;
-        <i class="fa fa-long-arrow-right" aria-hidden="true" id="next"></i>
+        <i class="fa fa-long-arrow-right" aria-hidden="true" id="next" onClick={handleNext} ></i>
       </section>
     </section>
   );

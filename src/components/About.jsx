@@ -16,9 +16,7 @@ const About = () => {
           </h1>
           <hr />
           <p>
-            Trafalgar provides progressive, and affordable healthcare,
-            accessible on mobile and online for everyone. To us, it’s not just
-            work. We take pride in the solutions we deliver
+            Trafalgar provides progressive, and affordable healthcare,accessible on mobile and online for everyone. To us, it’s not just work. We take pride in the solutions we deliver
           </p>
           <a className="button" href="#">
             Learn more

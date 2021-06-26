@@ -25,7 +25,7 @@ const Service = () => {
           );
         })}
       </section>
-      <a href="#">Learn more</a>
+      <a href="#" className="button" >Learn more</a>
     </section>
   );
 };

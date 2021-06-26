@@ -101,7 +101,7 @@ label #cancel {
   color: var(--textColor);
   font-size: 3rem;
   float: right;
-  line-height: 13rem;
+  line-height: 11rem;
   margin-right: 1rem;
   cursor: pointer;
   display: none;
@@ -137,13 +137,14 @@ label #cancel {
     text-align: center;
     transition: all 0.5s;
     border-top: 3px solid var(--primaryColor);
+    z-index: 1000;
   }
   nav ul li {
     display: block;
     line-height: 100%;
     margin-top: 3rem;
   }
-  #check:checked ~ ul {
+  #check:checked ~  ul {
     left: 0;
   }
   #check:checked ~ label #btn {
@@ -151,6 +152,9 @@ label #cancel {
   }
   #check:checked ~ label #cancel {
     display: block;
+  }
+  #check:checked ~ nav{
+    position: fixed;
   }
 }
 @media (max-width: 310px) {
@@ -323,17 +327,36 @@ label #cancel {
   flex-basis: 30%;
   margin: 2rem 0.6rem 1rem 0.6rem;
   padding: 2.6rem 2.6rem 3rem;
-  border-radius: 10px;
   box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: 35.4rem;
-  /* max-height: 35.4rem; */
   width: 35rem;
-  /* max-width: 35rem; */
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 3rem;
 }
 
+.service .serviceContainer .serviceCard::before{
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: var(--primaryColor);
+  left: 0;
+  bottom: 0;
+  transition: 0.3s linear;
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 3rem;
+}
+
+.service .serviceContainer .serviceCard:hover::before{
+  width: 100%;
+  height: 100%;
+}
 .service .serviceContainer .serviceCard p {
   font-size: 1.6rem;
   font-style: normal;
@@ -551,12 +574,43 @@ label #cancel {
   }
 }
 @media (max-width: 550px) {
+  .about section div img {
+    width: 70%;
+  }
+  .about section div h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .about hr {
+    margin: 1.6rem 0;
+  }
+  .about section div p {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}
+@media  (max-width: 350px){
+  .about section div h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .about hr {
+    margin: 1rem 0;
+  }
+  .about section div p {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    width: 95%;
+  }
 }
 /* ////////////////////////////////////////////////// */
 /* ///////////////////////// testimonial /////////////////// */
 /* //////////////////////////////////////////////// */
+.testimonialMain{
+  padding: 0 6rem;
+}
 .testimonial {
-  width: 75%;
+  width: 85%;
   margin: auto;
   background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
   text-align: center;
@@ -564,7 +618,7 @@ label #cancel {
   color: var(--backgroundColor);
   border-radius: 24px;
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .testimonial * {
   transition: all 0.5s;
@@ -692,11 +746,23 @@ label #cancel {
   }
 }
 @media (max-width: 400px) {
+  .testimonialMain{
+    padding: 0 3rem;
+  }
   .testimonial {
     width: 85%;
   }
   .testimonial h1 {
     font-size: 1.6rem;
+  }
+}
+@media (max-width:323px){
+  .testimonialMain{
+    padding: 0 0;
+    overflow-x: hidden;
+  }
+  .testimonial {
+    width: 95%;
   }
 }
 /* ////////////////////////////////////////////////// */

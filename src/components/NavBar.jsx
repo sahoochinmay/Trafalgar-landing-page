@@ -1,31 +1,35 @@
-import React from "react";
+import React,{useState} from "react";
 import logo from "../assets/logo.svg";
 
 const NavBar = () => {
+  const [checkState,setCheckState]= useState(false)
+  const handleClick= () =>{
+    setCheckState(!checkState)
+  }
   return (
     <div>
-      <nav>
-        <input type="checkbox" id="check" />
+      <nav  >
+        <input type="checkbox" id="check" checked={checkState} />
         <label for="check">
-          <i class="fa fa-bars" id="btn"></i>
-          <i class="fa fa-times" id="cancel"></i>
+          <i class="fa fa-bars" id="btn" onClick={handleClick} ></i>
+          <i class="fa fa-times" id="cancel" onClick={handleClick} ></i>
         </label>
         <img src={logo} alt="Trafalgar" id="logo" />
-        <ul class="navbar-collapse">
+        <ul className="navbar-collapse">
           <li>
-            <a href="#H">Home</a>
+            <a href="#H" onClick={handleClick} >Home</a>
           </li>
           <li>
-            <a href="#F">Find a doctor</a>
+            <a href="#F" onClick={handleClick}>Find a doctor</a>
           </li>
           <li>
-            <a href="#A">App</a>
+            <a href="#A" onClick={handleClick}>App</a>
           </li>
           <li>
-            <a href="#T">Testimonials</a>
+            <a href="#T" onClick={handleClick}>Testimonials</a>
           </li>
           <li>
-            <a href="#U">About us</a>
+            <a href="#U" onClick={handleClick}>About us</a>
           </li>
         </ul>
       </nav>
